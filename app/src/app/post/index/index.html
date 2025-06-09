@@ -1,1 +1,36 @@
-<p>index works!</p>
+<div class="card mt-5">
+    <h3 class="card-header p-3"> Angular CRUD App</h3>
+    <div class="card-body">
+
+        <div class="m-1">
+            <a
+            [routerLink]="['/posts/create']"
+             class="btn btn-success btn-sm">Create Post</a>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th width="250px">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(post of posts; track post.id){
+                <tr>
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.body }}</td>
+                    <td>
+                        <a [routerLink]="['/posts', post.id]" class="btn btn-info btn-sm m-1">Show</a>
+                        <a [routerLink]="['/posts', post.id,'edit']" class="btn btn-primary m-1 btn-sm">Edit</a>
+                        <button (click)="deletePost(post.id)" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
