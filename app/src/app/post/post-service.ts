@@ -18,12 +18,12 @@ export class PostService {
     return this.http.post<Post>('/posts', post);
   }
 
-  findPost(id: number): Observable<Post> {
+  findPost(id: string): Observable<Post> {
     return this.http.get<Post>(`/posts/${id}`);
   }
 
-  updatePost(post: Post): Observable<Post> {
-    return this.http.put<Post>(`/posts/${post.id}`, post);
+  updatePost(id: string, data: Post): Observable<Post> {
+    return this.http.put<Post>(`/posts/${data.id}`, data);
   }
 
   deletePost(id: number): Observable<void> {
