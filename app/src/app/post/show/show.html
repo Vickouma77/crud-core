@@ -1,1 +1,17 @@
-<p>show works!</p>
+<div class="card mt-5">
+    <h3 class="card-header p-3"> Show Post</h3>
+    <div class="card-body">
+
+        <div class="m-1">
+            <a
+            [routerLink]="['/posts']"
+             class="btn btn-primary btn-sm">Back</a>
+        </div>
+
+        <div>
+            <p><strong>Title:</strong> {{ title }}</p>
+            <p><strong>Body:</strong> {{ body }}</p>
+        </div>
+        
+    </div>
+</div>
